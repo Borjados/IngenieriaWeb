@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block titulo %}COCHES{% endblock %}
+
+{% block contenido %}
+<h2>COCHES</h2>
+{% if autos %}
+	<ul>
+		<li>
+		    {{ autos.modelo}}
+		</li>
+		<li>
+		    {{ autos.precio}}
+		</li>
+		<li>
+			<img src="{{ autos.url_coche}}" alt="Girl in a jacket" width="500" height="600">
+		</li>
+	</ul>
+{% else %}
+<p>No hay coches a la venta.</p>
+{% endif %}
+{% endblock %}

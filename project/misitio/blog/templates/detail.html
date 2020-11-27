@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+{%load static %}
+<html lang="es">
+
+<head>
+  <title>Videogame Place / {{ post.titulo }} </title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="http://127.0.0.1:8000/blog/#">Video<span class="logo_colour">game</span><span class="logo_colour2">Place</span></a></h1>
+          <h2>A place to know what games to buy</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href='http://127.0.0.1:8000/blog/#'>Return</a></li>
+		  {% for d in lista_posts %}
+				<li>
+					<a href="{% url 'post' d.id %}">
+						{{ d.titulo}}
+						</a>
+				</li>
+			{% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <h3>Últimas noticias</h3>
+        <h4>Sijismo y Zoroastrismo</h4>
+        <h5>20 de octubre de 2020</h5>
+        <p>La nueva actualización de Europa Universalis nos adentra en estas dos religiones asiaticas, añadiendo nuevas mecanicas y fervor a estos dos cultos.<br /><a href="https://forum.paradoxplaza.com/forum/threads/eu4-development-diary-20th-of-october-2020.1437773/">Leer mas</a></p>
+        <p></p>
+        <h4>'Cyberpunk 2077' emplea una IA para sincronizar los labios de los personajes en 10 idiomas distintos</h4>
+        <h5>21 de octubre de 2020</h5>
+        <p>A menos un mes de su lanzamiento el próximo 19 de noviembre, 'Cyberpunk 2077' sigue desvelando detalles sobre su mecánica y desarrollo que reflejan el nivel de cuidado que CD Projekt Red ha puesto en su construcción de un mundo futuro. El último: el estudio ha desarrollado un sistema de inteligencia artificial que permite sincronizar los labios de los personajes a sus diálogos en los diez idiomas distintos que incluirá el título.<br /><a href="https://www.xataka.com/videojuegos/cyberpunk-2077-emplea-ia-para-sincronizar-labios-personajes-10-idiomas-distintos">Leer más</a></p>
+        <h3>Links útiles</h3>
+        <ul>
+          <li><a href="https://www.ubisoft.com/es-es/">Ubisoft</a></li>
+          <li><a href="https://www.paradoxplaza.com/">Paradox Interactive</a></li>
+          <li><a href="https://www.codemasters.com/">Codemasters</a></li>
+          <li><a href="https://www.activision.com/es/home">Activision</a></li>
+        </ul>
+        <h3>Search</h3>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
+          </p>
+        </form>
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>{{ post.titulo }}</h1>
+		<h4>Plataforma: </h4> <p>{{ post.plataforma }}</p>
+        <h4>Comentario: </h4><p> {{ post.comentario }}</p>
+        <h4>Rating: </h4> <p> {{ post.rating }}</p>
+      </div>
+    </div>
+    <div id="footer">
+      Copyright &copy; black_pink_white | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | free from html5webtemplates.co.uk
+    </div>
+  </div>
+</body>
+</html>
