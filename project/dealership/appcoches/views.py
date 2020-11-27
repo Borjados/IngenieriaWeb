@@ -12,6 +12,6 @@ def index(request):
 def autos(request, coches_id):
     autos = get_object_or_404(Coches, pk=coches_id)
     context = { 'autos': autos }
-    return render(request, 'autos.html', context)
+    return render(request, 'coches.html', context)
 
 # Create your views here.

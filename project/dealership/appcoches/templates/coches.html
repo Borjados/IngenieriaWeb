@@ -53,27 +53,33 @@ http://creativecommons.org/licenses/by-nc/2.5/
 <div id='left_side'>
 <p>
 
-<h3>Ultimas ofertas</h3>
-{% if lista_coches %}
+<h3>Coche</h3>
+{% if autos %}
 	<ul>
-	{% for d in lista_coches %}
-		<li>
-		    <a href="/appcoches/auto/{{d.id}}">{{ d.modelo}}</a>
-		</li>
-		<li>
-		    <a href="/appcoches/auto/{{d.id}}">{{ d.precio}}</a>
-		</li>
-		<li>
-			<img src="{{ autos.url_coche}}" alt="Girl in a jacket" width="5'" height="5"></a>
-		</li>
+		<img src="{{ autos.marca.url_marca}}" width="75" height="35">
 		<p>
-		
 		</p>
-		
-	{% endfor %}
+		<li>
+		    {{autos.marca.nombre}} {{ autos.modelo}}
+		</li>
+		<li>
+			{{ autos.kilometros}} km. 
+		</li>
+		<li>
+		    Precio: {{ autos.precio}}$
+
+			<img src="{{ autos.url_coche}}" width="400" height="270">
+		</li>
+		<li>
+		    Vendedor: {{ autos.vendedor.nombre}} {{ autos.vendedor.apellido}}
+			
+			<p></p>
+			<img src="{{ autos.vendedor.url_vendedor }}" width="120" height="150">
+			
+		</li>
 	</ul>
 {% else %}
-<p>No hay departamentos creados.</p>
+<p>No hay coches a la venta.</p>
 {% endif %}
 
 </p>
