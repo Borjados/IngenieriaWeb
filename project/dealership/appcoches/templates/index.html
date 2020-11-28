@@ -28,18 +28,18 @@ http://creativecommons.org/licenses/by-nc/2.5/
 <div id='page_wrapper'>
 
 <div id='page_header'>
-<h1>Papa Borja's Garage</h1>
-<h2>The best cars in Louisiana</h2>
+	<a href = "/appcoches/"><h1>Papa Borja's Garage<span class="logo_colour"></h1></a>
+	<h2>The best cars in Louisiana</h2>
 </div>
 
 <div id='menu_bar'>
 
 <div id="navcontainer">
 <ul id="navlist">
-<li id="active"><a href="#" id="current">Ofertas</a></li>
-<li><a href="#">Marcas</a></li>
-<li><a href="#">Categorias</a></li>
-<li><a href="#">Item four</a></li>
+<li class="selected"><a href="/appcoches/">Ofertas</a></li>
+<li><a href="/appcoches/marca/">Marcas</a></li>
+<li><a href="/appcoches/categoria/">Categorias</a></li>
+<li><a href="/appcoches/vendedor/">Vendedores</a></li>
 <li><a href="#">Item five</a></li>
 </ul>
 </div>
@@ -57,19 +57,11 @@ http://creativecommons.org/licenses/by-nc/2.5/
 {% if lista_coches %}
 	<ul>
 	{% for d in lista_coches %}
-		<li>
-		    <a href="/appcoches/auto/{{d.id}}">{{d.marca.nombre}} {{ d.modelo}}</a>
-		</li>
-		<li>
-		    <a href="/appcoches/auto/{{d.id}}">{{ d.precio}}</a>
-		</li>
-		<li>
-			<img src="{{ autos.url_coche}}" alt="Girl in a jacket" width="5'" height="5"></a>
-		</li>
-		<p>
-		
-		</p>
-		
+		<img src="{{ d.url_coche}}" alt="Girl in a jacket" width="200'" height="135"></a> 	
+		<br>
+		<a href="/appcoches/auto/{{d.id}}">{{d.marca.nombre}} {{ d.modelo}}</a>
+		<a href="/appcoches/auto/{{d.id}}">{{ d.precio}}</a>
+		<br>
 	{% endfor %}
 	</ul>
 {% else %}

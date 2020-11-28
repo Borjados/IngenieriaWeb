@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 {% load static %}
-<html lang="es">
+<html lang="en">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <!--
@@ -53,36 +53,18 @@ http://creativecommons.org/licenses/by-nc/2.5/
 <div id='left_side'>
 <p>
 
-<h3>Coche</h3>
-{% if autos %}
+<h3>Ultimas ofertas</h3>
+{% if lista_marcas %}
 	<ul>
-		<img src="{{ autos.marca.url_marca}}" width="75" height="35">
-		<p>
-		</p>
-		<li>
-		    {{autos.marca.nombre}} {{ autos.modelo}}
-		</li>
-		<li>
-			{{ autos.kilometros}} km. 
-		</li>
-		<li>
-			{{ autos.anno}} 
-		</li>
-		<li>
-		    Precio: {{ autos.precio}}$
-
-			<img src="{{ autos.url_coche}}" width="400" height="270">
-		</li>
-		<li>
-		    Vendedor: {{ autos.vendedor.nombre}} {{ autos.vendedor.apellido}}
-			
-			<p></p>
-			<img src="{{ autos.vendedor.url_vendedor }}" width="120" height="150">
-			
-		</li>
+	{% for d in lista_marcas %}
+		<img src="{{ d.url_marca}}" alt="Girl in a jacket" width="200'" height="135"></a> 	
+		<br>
+		<a href="/appcoches/marca/{{d.id}}">{{d.nombre}}</a>
+		<br>
+	{% endfor %}
 	</ul>
 {% else %}
-<p>No hay coches a la venta.</p>
+<p>No hay departamentos creados.</p>
 {% endif %}
 
 </p>
