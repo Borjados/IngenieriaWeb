@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+<!-- insert the page content here -->
+{% block contenido %}
+<p>
+
+
+<h3>Crear Nueva Cuenta</h3>
+<form action = "" name = "formulario" method = "get">
+    <label for="nombre">Nombre:</label>
+    <input type = "text" id = "nombre" maxlength = "30" placeholder = "Nombre" required >
+    <br>
+    <label for="nombre">Apellidos:</label>
+    <input type = "text" id = "apellidos" maxlength = "30" placeholder = "Apellidos" required >
+    <br>
+
+    <label for="nombre">Usuario:</label>
+    <input type = "text" id = "usuario" maxlength = "30" placeholder = "Usuario" required >
+    <br>
+    <label for="contrasenya">Contrasenya:</label>
+    <input type = "password" id = "contrasenya" maxlength = "30" placeholder = "Contrasenya">
+    <br>
+    <label for="contrasenyaRepetida">Repita Contrasenya:</label>
+    <input type = "password" id = "contrasenyaRepetida" maxlength = "30" placeholder = "Repita la contrasenya">
+    <br>
+
+    <label for="sexo">Sexo:</label>
+    <input type = "radio" id = "sexo" id = "hombre" value = "Hombre" required> Hombre
+    <input type = "radio" id = "sexo" id = "mujer" value = "Mujer" required> Mujer
+    <input type = "radio" id = "sexo" id = "otro" value = "Otro" required> Otro
+    <br>
+
+    <label for="fecha">Fecha Nacimiento:</label>
+    <input type="date" id="fecha" name="trip-start" value="2002-11-29" min="1900-01-01" max="2002-12-31" required>
+       <br>
+
+    <input type = "checkbox" id = "terminos" id = "terminos" required> Terminos y condiciones
+    <br>
+
+    <input type = "submit" id = "aceptar" name = "btn" value = "Aceptar">
+    
+    <!--La diferencia entre button y submit es que al darle a submit te envia directamente el formulario y button no-->
+</form>
+    
+</p>
+{% endblock %}

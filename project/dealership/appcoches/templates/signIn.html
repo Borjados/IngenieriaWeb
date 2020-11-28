@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+<!-- insert the page content here -->
+{% block contenido %}
+<p>
+
+    <h3>Crear Cuenta | Inico Sesion</h3>
+    <label for="usuario">Usuario:</label>
+    <input type = "text" name = "nombre" maxlength = "30" placeholder = "Usuario">
+    <br>
+    <label for="contrasenya">Contrasenya:</label>
+   <input type = "password" name = "contrasenya" maxlength = "30" placeholder = "Contrasenya">
+    <br>
+    <button id = "aceptar">Aceptar</button>
+    <a href="/appcoches/signIn/crearCuenta/" id = "enlace"><button id = "crear">Crear Cuenta</button></a>
+    
+</p>
+	
+{% endblock %}

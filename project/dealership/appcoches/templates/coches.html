@@ -1,129 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{% load static %}
-<html lang="es">
-<html xmlns="http://www.w3.org/1999/xhtml">
+{% extends "base.html" %}
 
-<!--
-Copyright: Darren Hester 2006, http://www.designsbydarren.com
-License: Released Under the "Creative Commons License", 
-http://creativecommons.org/licenses/by-nc/2.5/
--->
-<head>
+<!-- insert the page content here -->
+{% block contenido %}
 
-<!-- Meta Data -->
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="description" content="Short description of your site here." />
-<meta name="keywords" content="keywords, go, here, seperated, by, commas" />
-
-<!-- Site Title -->
-<title>Papa Borja's Garage | The best cars in Louisiana</title>
-
-<!-- Link to Style External Sheet -->
-<link href="{% static 'appcoches/css/style.css' %}" type="text/css" rel="stylesheet" />
-
-</head>
-
-<body>
-
-<div id='page_wrapper'>
-
-<div id='page_header'>
-	<a href = "/appcoches/"><h1>Papa Borja's Garage<span class="logo_colour"></h1></a>
-	<h2>The best cars in Louisiana</h2>
-</div>
-
-<div id='menu_bar'>
-
-<div id="navcontainer">
-<ul id="navlist">
-<li class="selected"><a href="/appcoches/">Ofertas</a></li>
-<li><a href="/appcoches/marca/">Marcas</a></li>
-<li><a href="/appcoches/categoria/">Categorias</a></li>
-<li><a href="/appcoches/vendedor/">Vendedores</a></li>
-<li><a href="#">Item five</a></li>
-</ul>
-</div>
-
-</div>
-
-<div id='content_wrapper'>
-
-<div class='spacer'></div>
-
-<div id='left_side'>
 <p>
 
-<h3>Coche</h3>
-{% if autos %}
-	<ul>
-		<img src="{{ autos.marca.url_marca}}" width="75" height="35">
-		<p>
-		</p>
-		<li>
-		    {{autos.marca.nombre}} {{ autos.modelo}}
-		</li>
-		<li>
-			{{ autos.kilometros}} km. 
-		</li>
-		<li>
-			{{ autos.anno}} 
-		</li>
-		<li>
-		    Precio: {{ autos.precio}}$
+	<h3>Coche</h3>
+	{% if autos %}
+		<ul>
+			<img src="{{ autos.marca.url_marca}}" width="75" height="35">
+			<p>
+			</p>
+			<li>
+				{{autos.marca.nombre}} {{ autos.modelo}}
+			</li>
+			<li>
+				{{ autos.kilometros}} km. 
+			</li>
+			<li>
+				{{ autos.anno}} 
+			</li>
+			<li>
+				Precio: {{ autos.precio}}$
+	
+				<img src="{{ autos.url_coche}}" width="400" height="270">
+			</li>
+			<li>
+				Vendedor: {{ autos.vendedor.nombre}} {{ autos.vendedor.apellido}}
+				
+				<p></p>
+				<img src="{{ autos.vendedor.url_vendedor }}" width="120" height="150">
+				
+			</li>
+			<!--<a href="/appcoches/{{autos.id}}/comprar/" id = "enlace"><button id = "comprar">Comprar</button></a>-->
+			<a href="/appcoches/comprar/" id = "enlace"><button id = "comprar">Comprar</button></a>
+		</ul>
+		
+	{% else %}
+	<p>No hay coches a la venta.</p>
+	{% endif %}
+	
+	</p>
+{% endblock %}
 
-			<img src="{{ autos.url_coche}}" width="400" height="270">
-		</li>
-		<li>
-		    Vendedor: {{ autos.vendedor.nombre}} {{ autos.vendedor.apellido}}
-			
-			<p></p>
-			<img src="{{ autos.vendedor.url_vendedor }}" width="120" height="150">
-			
-		</li>
-	</ul>
-{% else %}
-<p>No hay coches a la venta.</p>
-{% endif %}
 
-</p>
-
-</div>
-
-<div id='right_side'>
-
-<h2>Ultimas Noticias</h2>
-
-<h3>Chase Elliot campeon de la Monster Energy NASCAR Cup Series</h3>
-<h4>9 de noviembre de 2020</h4>
-<p>
-<a href='https://carburando.com/notas/nascar-chase-elliott-es-el-nuevo-campeon'>El nuevo campeon de la NASCAR CUP Series es el piloto de Georgia Chase Elliot.</a> El piloto se impuso a sus rivles de campeonato ganando la ultima prueba celebrada en el circuito de Phoenix.
-<img src="https://www.nascar.com/wp-content/uploads/sites/7/2020/05/29/2020-May28-Elliott-jubo-2.jpg" alt="Chase Elliot Cup Winner" width="125" height="60">
-</p>
-
-<h3>Se presenta el nuevo Mercedes-AMG 45 S 4MATIC</h3>
-<h4>23 de noviembre de 2020</h4>
-<p>
-<a href='https://www.coches.net/videos/mercedes-amg-cla-45-s-4matic'>El nuevo Mercedes-AMG 45 S 4MATIC 2021 a sido presentado con su motor de 2L y su carroceria actualizada.</a> Cuenta con 3 motores diferentes de 306CV, 387CV y 421CV y con un precio base de 77.000 euros.
-<img src="https://www.km77.com/images/medium/4/0/9/1/mediana-exterior-1.344091.jpg" alt="Mercedes-AMG 45 S 4MATIC" width="125" height="60">
-</p>
-
-</div>
-
-<div class='spacer'></div>
-
-</div>
-
-<div id='page_footer'>
-<p>
-Template provided by <a href="http://www.designsbydarren.com/" target="new">Designs by Darren</a>. 
-Released under a <a href="http://creativecommons.org/licenses/by-nc/2.5/" target="new">Creative Commons License</a>.<br />
-<a href="http://validator.w3.org/check?uri=referer" target="new">Valid XHTML 1.0 Transitional</a>
-</p>
-
-</div>
-
-</div>
-
-</body>
-
-</html>

@@ -29,4 +29,13 @@ def vendedor(request):
     context = { 'lista_vendedores': vendedor}
     return render(request, 'vendedor.html', context)
 
+def signIn(request):
+    return render(request, 'signIn.html')
+
+def crearCuenta(request):
+    return render(request, 'crearCuenta.html')
+
+def comprar(request):
+    return render(request, 'comprar.html')
+
 # Create your views here.
