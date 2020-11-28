@@ -10,7 +10,9 @@
 		{% for d in lista_vendedores %}
 			<img src="{{ d.url_vendedor}}" alt="Girl in a jacket" width="200'" height="135"></a> 	
 			<br>
-			<a href="/appcoches/vendedor/{{d.id}}">{{d.vendedor}}</a>
+			<a href="/appcoches/vendedor/{{d.id}}">{{d.nombre}} {{d.apellido}}</a>
+			<br>
+			<a href="/appcoches/vendedor/{{d.id}}">Rating: {{d.rating}}/10</a>
 			<br>
 		{% endfor %}
 		</ul>

@@ -2,23 +2,26 @@
 
 <!-- insert the page content here -->
 {% block contenido %}
+
 <p>
-
-
-<h3>Ultimas ofertas</h3>
-    {% if lista_coches %}
+	<h3>Coches de la categoria {{categoria}}</h3>
+    {% if lista_cochescategoria %}
         <ul>
-        {% for d in lista_coches %}
+        {% for d in lista_cochescategoria %}
             <img src="{{ d.url_coche}}" alt="Girl in a jacket" width="200'" height="135"></a> 	
             <br>
             <a href="/appcoches/auto/{{d.id}}">{{d.marca.nombre}} {{ d.modelo}}</a>
-            <a href="/appcoches/auto/{{d.id}}">{{ d.precio_oferta}}$</a>
+            {% if d.oferta == True %}
+				<a href="/appcoches/auto/{{d.id}}">{{ d.precio_oferta}}$</a>
+			{% else %}
+				<a href="/appcoches/auto/{{d.id}}">{{ d.precio}}$</a>
+			{% endif %}
             <br>
         {% endfor %}
         </ul>
     {% else %}
     <p>No hay departamentos creados.</p>
     {% endif %}
-    
+	
 </p>
 {% endblock %}

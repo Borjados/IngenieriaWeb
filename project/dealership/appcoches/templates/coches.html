@@ -21,10 +21,24 @@
 				{{ autos.anno}} 
 			</li>
 			<li>
-				Precio: {{ autos.precio}}$
+				{% if autos.oferta == True %}
+					Precio: {{ autos.precio_oferta}}$
+				{% else %}
+					Precio: {{ autos.precio}}$
+				{% endif %}
+			</li>
+				{% if categoria %}
+					<ol>
+					{% for h in categoria %}
+						<li> {{h.nombre}}</li>
+					{% endfor %}
+					</ol>
+				{% else %}
+					<p>No tiene habilidades asociadas.</p>
+				{% endif %}
 	
 				<img src="{{ autos.url_coche}}" width="400" height="270">
-			</li>
+		
 			<li>
 				Vendedor: {{ autos.vendedor.nombre}} {{ autos.vendedor.apellido}}
 				
