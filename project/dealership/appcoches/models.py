@@ -22,7 +22,7 @@ class Coches(models.Model):
     puertas = models.IntegerField(default=0)
     color = models.CharField(max_length=50)
     kilometros = models.IntegerField(default=0)
-    año = models.IntegerField(default=0)
+    anno = models.IntegerField(default=0)
     matricula = models.CharField(max_length=50)
     oferta = models.BooleanField(default=False)
     precio = models.IntegerField(default=0)

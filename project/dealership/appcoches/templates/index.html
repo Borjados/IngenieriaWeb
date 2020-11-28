@@ -58,7 +58,7 @@ http://creativecommons.org/licenses/by-nc/2.5/
 	<ul>
 	{% for d in lista_coches %}
 		<li>
-		    <a href="/appcoches/auto/{{d.id}}">{{ d.modelo}}</a>
+		    <a href="/appcoches/auto/{{d.id}}">{{d.marca.nombre}} {{ d.modelo}}</a>
 		</li>
 		<li>
 		    <a href="/appcoches/auto/{{d.id}}">{{ d.precio}}</a>
